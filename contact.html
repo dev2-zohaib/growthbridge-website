@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact | GrowthBridge</title>
+    <meta name="description" content="Contact GrowthBridge to discuss analytics-driven marketing, automation, reporting, and technical consulting." />
+    <link rel="canonical" href="https://example.com/contact" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body data-page="contact">
+    <header class="site-header">
+      <div class="container nav-shell">
+        <a class="brand" href="/index.html"><span class="brand-mark">GB</span><span>GrowthBridge</span></a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+        <nav id="site-nav" class="site-nav" aria-label="Primary">
+          <a href="/index.html">Home</a>
+          <a href="/services.html">Services</a>
+          <a href="/case-studies.html">Case Studies</a>
+          <a href="/blog.html">Blog</a>
+          <a href="/contact.html" class="button button-sm">Contact</a>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section class="page-hero section">
+        <div class="container narrow">
+          <p class="eyebrow">Contact</p>
+          <h1>Let’s talk about your next stage of growth.</h1>
+          <p class="lead">Use the form below to share your goals. This frontend-only implementation includes client-side validation and submission states, and is ready to connect to a backend endpoint when available.</p>
+        </div>
+      </section>
+      <section class="section">
+        <div class="container contact-layout">
+          <div class="card contact-copy">
+            <h2>What to expect</h2>
+            <ul>
+              <li>Initial discovery around goals, channels, and reporting challenges</li>
+              <li>Discussion of lead generation, ROI, and digital infrastructure priorities</li>
+              <li>Recommendations for the highest-impact next steps</li>
+            </ul>
+            <p class="integration-note"><strong>Backend integration point:</strong> update <code>FORM_ENDPOINT</code> in <code>src/main.js</code> to wire the form to your API or service.</p>
+          </div>
+          <div class="card">
+            <form id="contact-form" novalidate>
+              <div class="form-grid">
+                <label>
+                  Full name
+                  <input type="text" name="name" required minlength="2" />
+                  <span class="field-error" data-error-for="name"></span>
+                </label>
+                <label>
+                  Work email
+                  <input type="email" name="email" required />
+                  <span class="field-error" data-error-for="email"></span>
+                </label>
+                <label>
+                  Company
+                  <input type="text" name="company" required minlength="2" />
+                  <span class="field-error" data-error-for="company"></span>
+                </label>
+                <label>
+                  Interested in
+                  <select name="service" required>
+                    <option value="">Select a service</option>
+                    <option>Performance Marketing</option>
+                    <option>Marketing Analytics & Reporting</option>
+                    <option>Content Marketing & Brand Positioning</option>
+                    <option>Marketing Automation & CRM Integrations</option>
+                    <option>Technical Consulting</option>
+                  </select>
+                  <span class="field-error" data-error-for="service"></span>
+                </label>
+              </div>
+              <label>
+                Project goals
+                <textarea name="message" rows="6" required minlength="20"></textarea>
+                <span class="field-error" data-error-for="message"></span>
+              </label>
+              <div class="form-actions">
+                <button class="button" type="submit">Send inquiry</button>
+                <p id="form-status" class="form-status" aria-live="polite"></p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div><a class="brand brand-footer" href="/index.html"><span class="brand-mark">GB</span><span>GrowthBridge</span></a></div>
+        <div><h2>Pages</h2><ul><li><a href="/services.html">Services</a></li><li><a href="/case-studies.html">Case Studies</a></li><li><a href="/blog.html">Blog</a></li></ul></div>
+      </div>
+    </footer>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

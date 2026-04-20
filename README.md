@@ -1,190 +1,116 @@
 # GrowthBridge Website
 
-A simple modern marketing website for **GrowthBridge**, a digital-first marketing and technology services company serving startups, e-commerce brands, SaaS companies, and regional service businesses.
+A modern, responsive multi-page marketing website for **GrowthBridge**, a digital-first marketing and technology solutions provider focused on analytics-driven growth, measurable ROI, stronger visibility, lead generation, and scalable digital infrastructure.
 
-The project includes:
-- Responsive homepage and supporting pages
-- Working contact form with server-side validation and local file persistence
-- Basic booking system with available slots, persistence, and double-booking protection
-- Blog section with a lightweight file-based CMS workflow using Markdown
-- Seeded blog posts aligned to GrowthBridge's audience and services
-- Automated tests for validation logic and content helpers
+## Stack
 
-## Tech Stack
+- Vite for lightweight local development and builds
+- Vanilla HTML, CSS, and JavaScript for easy maintenance and expansion
+- Vitest for unit testing
 
-- Node.js built-in `http` server
-- HTML template rendering with simple server-side functions
-- Plain CSS for styling
-- JSON files for contact and booking persistence
-- Markdown files for blog content and CMS workflow
-- Node test runner for automated tests
+## Features
 
-## Project Structure
+- Responsive homepage with hero, value proposition, services, proof/results, CTA, and company overview
+- Dedicated pages for Services, Case Studies, Blog, and Contact
+- Three sample blog posts and three realistic sample case studies
+- SEO-friendly metadata, semantic structure, `robots.txt`, and `sitemap.xml`
+- Production-ready frontend contact form pattern with validation, success/error states, and clear backend integration notes
+- Clean, maintainable file structure suitable for expansion
 
-```text
-.
-├── content/
-│   └── blog/
-│       ├── automation-for-service-businesses.md
-│       ├── fix-inconsistent-lead-generation.md
-│       └── roi-dashboard-marketing.md
-├── data/
-│   ├── bookings.json
-│   └── contacts.json
-├── public/
-│   └── assets/
-│       └── styles.css
-├── tests/
-│   └── server.test.js
-├── views/
-│   └── layout.html
-├── package.json
-├── server.js
-└── README.md
-```
+## Getting Started
 
-## Run Locally
+### Prerequisites
 
-### Requirements
-- Node.js 18+ recommended
+- Node.js 20+
+- npm 10+
 
-### Commands
+### Install
 
 ```bash
 npm install
-npm start
 ```
 
-For auto-reload during development:
+### Run locally
 
 ```bash
 npm run dev
 ```
 
-The site will run at:
+Open the local Vite URL shown in the terminal.
 
-```text
-http://localhost:3000
-```
-
-### Environment Variables
-
-No environment variables are required.
-
-Optional:
-- `PORT` to override the default port `3000`
-
-Example:
-
-```bash
-PORT=4000 npm start
-```
-
-## Available Pages and Routes
-
-### Site Pages
-- `/` - Homepage
-- `/services` - Service overview
-- `/about` - Company overview
-- `/contact` - Contact form
-- `/booking` - Booking system
-- `/blog` - Blog index
-- `/blog/:slug` - Individual blog post page
-- `/admin/blog` - Simple CMS form to create blog posts locally
-
-### Data / Utility Endpoints
-- `/api/slots` - JSON list of booking slots and availability
-- `/api/contacts` - Stored contact submissions
-- `/api/bookings` - Stored booking submissions
-
-## Contact Form
-
-The contact form submits to `POST /contact` and is implemented entirely in project-native code.
-
-Behavior:
-- Validates name, email, company, business type, and message length
-- Stores submissions in `data/contacts.json`
-- Returns clear success and error states in the UI
-
-## Booking System
-
-The booking system is available at `/booking`.
-
-Behavior:
-- Displays predefined available strategy call slots
-- Accepts booking requests using `POST /booking`
-- Stores bookings in `data/bookings.json`
-- Prevents double-booking by rejecting requests for an already reserved slot
-- Exposes availability via `/api/slots`
-
-## Blog and Basic CMS Workflow
-
-The blog is powered by Markdown files in `content/blog`.
-
-Each post uses front matter:
-
-```md
----
-title: Example Post
-slug: example-post
-date: 2026-04-20
-excerpt: Short summary for listings.
-tags: analytics, growth
----
-
-# Example Post
-
-Write your content in Markdown.
-```
-
-### Add or Edit Content
-
-You have two simple options:
-
-1. **Direct file editing**
-   - Create or edit `.md` files inside `content/blog/`
-   - Update the front matter fields
-   - Restart the server if needed
-
-2. **Local admin form**
-   - Visit `/admin/blog`
-   - Submit a new post
-   - The app will create a new Markdown file in `content/blog/`
-
-This is a lightweight local CMS workflow intended for easy handoff and content management without external services.
-
-## Testing
-
-Run tests with:
+### Run tests
 
 ```bash
 npm test
 ```
 
-The automated tests cover:
-- Contact validation
-- Booking validation
-- Post validation
-- Slot generation
-- Slug creation
-- Markdown/front matter parsing helpers
+### Build for production
 
-## Manual Verification Checklist
+```bash
+npm run build
+```
 
-After starting the app locally:
+Preview the production build locally:
 
-1. Open `/` and verify the responsive homepage sections render correctly.
-2. Open `/services` and `/about` to verify supporting content.
-3. Submit the contact form at `/contact` and confirm the entry is saved in `data/contacts.json`.
-4. Open `/booking`, reserve a slot, and verify it appears in `data/bookings.json`.
-5. Try booking the same slot again and confirm the app blocks double-booking.
-6. Open `/blog` and verify the seeded posts are listed.
-7. Open an individual post route such as `/blog/fix-inconsistent-lead-generation`.
-8. Visit `/admin/blog`, create a post, and verify a new Markdown file appears in `content/blog/`.
-9. Run `npm test` and confirm all tests pass.
+```bash
+npm run preview
+```
 
-## Handoff Notes
+## Project Structure
 
-- All persistence is local-file based for simplicity and portability.
-- The project is intentionally lightweight and easy to understand.
-- If GrowthBridge later wants production hosting, this codebase can be extended with authentication, database storage, and deployment configuration.
+```text
+.
+├── blog/
+│   ├── content-positioning-for-saas.html
+│   ├── crm-automation-hand-off.html
+│   └── marketing-roi-dashboards.html
+├── src/
+│   └── main.js
+├── tests/
+│   └── contact-form.test.js
+├── blog.html
+├── case-studies.html
+├── contact.html
+├── index.html
+├── services.html
+├── sitemap.xml
+├── robots.txt
+├── styles.css
+├── vite.config.js
+└── README.md
+```
+
+## Contact Form Integration
+
+The contact form currently uses a frontend-only integration pattern.
+
+- Validation and UI states live in `src/main.js`
+- The backend/API integration point is the `FORM_ENDPOINT` constant in `src/main.js`
+- Replace `https://example.com/api/contact` with your deployed endpoint
+- Ensure your backend accepts `POST` JSON with the following fields:
+  - `name`
+  - `email`
+  - `company`
+  - `service`
+  - `message`
+
+Recommended backend behavior:
+
+1. Validate and sanitize incoming fields
+2. Return a `2xx` response with JSON on success
+3. Return a non-2xx response on failure so the UI can show the error state
+4. Add rate limiting, spam protection, and logging in production
+
+## Customization Notes
+
+- Update placeholder canonical URLs in the HTML files after deployment
+- Replace sample case studies and blog content with live company material as needed
+- Adjust colors in `styles.css` to match a final brand system
+- Expand `src/main.js` if you later add analytics, CMS, or API integrations
+
+## Engineering Notes
+
+- Semantic headings and accessible navigation are included
+- The mobile menu is JavaScript-enhanced but works with clean markup
+- Tests cover validation logic and form submission behavior
+- Assets are intentionally lightweight for good frontend performance

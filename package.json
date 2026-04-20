@@ -2,11 +2,17 @@
   "name": "growthbridge-website",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
-    "dev": "node --watch server.js",
-    "start": "node server.js",
-    "test": "node --test"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest"
   },
-  "description": "GrowthBridge marketing website with contact form, booking system, and file-based blog CMS",
-  "license": "MIT"
+  "devDependencies": {
+    "jsdom": "^26.1.0",
+    "vite": "^7.1.7",
+    "vitest": "^3.2.4"
+  }
 }
