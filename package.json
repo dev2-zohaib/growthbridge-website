@@ -1,0 +1,12 @@
+{
+  "name": "growthbridge-website",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "node --watch server.js",
+    "start": "node server.js",
+    "test": "node --test"
+  },
+  "description": "GrowthBridge marketing website with contact form, booking system, and file-based blog CMS",
+  "license": "MIT"
+}
