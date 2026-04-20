@@ -1,0 +1,86 @@
+[
+  {
+    "slug": "marketing-technology-alignment",
+    "title": "Why Marketing and Technology Alignment Is a Growth Advantage",
+    "excerpt": "When websites, analytics, CRM workflows, and campaigns are aligned, businesses gain speed, clarity, and better conversion performance.",
+    "date": "April 20, 2026",
+    "readingTime": "5 min read",
+    "category": "Growth strategy",
+    "intro": "Growth teams often underperform not because they lack effort, but because their systems do not reinforce one another.",
+    "sections": [
+      {
+        "heading": "Disconnected systems slow growth",
+        "paragraphs": [
+          "When campaign data, website UX, and CRM stages live in separate worlds, reporting gets noisy and priorities become reactive.",
+          "Alignment turns fragmented activity into a repeatable operating system."
+        ],
+        "list": [
+          "Clearer attribution",
+          "Faster optimization cycles",
+          "Less operational friction"
+        ]
+      },
+      {
+        "heading": "Shared KPIs create better decisions",
+        "paragraphs": [
+          "A good growth model ties channels to outcomes such as qualified leads, booked calls, revenue efficiency, or retention.",
+          "That makes it easier to decide what to improve next."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "improving-local-lead-generation",
+    "title": "3 Practical Ways Regional Service Businesses Can Improve Local Lead Generation",
+    "excerpt": "Local businesses can increase qualified inquiries by strengthening search visibility, reducing website friction, and improving lead follow-up speed.",
+    "date": "April 18, 2026",
+    "readingTime": "4 min read",
+    "category": "Local growth",
+    "intro": "Regional service businesses often have strong delivery but inconsistent digital demand generation.",
+    "sections": [
+      {
+        "heading": "Improve local discoverability",
+        "paragraphs": [
+          "Service pages should clearly state location relevance, service value, and next steps.",
+          "Google Business Profile optimization and local signals still matter for nearby demand capture."
+        ]
+      },
+      {
+        "heading": "Reduce website friction",
+        "paragraphs": [
+          "Make calls to action obvious, forms shorter, and trust indicators easier to find."
+        ],
+        "list": [
+          "Prominent call buttons",
+          "Visible proof points",
+          "Mobile-friendly conversion paths"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "dashboarding-for-better-decisions",
+    "title": "What Better Dashboards Actually Do for Marketing Decision-Making",
+    "excerpt": "A strong dashboard does more than report numbers. It helps teams compare efficiency, quality, and trend direction without manual spreadsheet work.",
+    "date": "April 14, 2026",
+    "readingTime": "6 min read",
+    "category": "Analytics",
+    "intro": "Teams need reporting that supports action, not just visibility.",
+    "sections": [
+      {
+        "heading": "Move from data volume to signal clarity",
+        "paragraphs": [
+          "Good dashboards prioritize the metrics that influence business choices.",
+          "That usually means trend lines, conversion rates, efficiency indicators, and stage-based outcomes instead of vanity metrics."
+        ]
+      },
+      {
+        "heading": "Automation changes the reporting cadence",
+        "paragraphs": [
+          "When dashboards are automated, teams spend less time collecting data and more time discussing what to change.",
+          "That creates a healthier optimization rhythm."
+        ]
+      }
+    ]
+  }
+]

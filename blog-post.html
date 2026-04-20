@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GrowthBridge Blog | Insights on Marketing, Tech, and Growth</title>
-  <meta name="description" content="Read GrowthBridge articles about demand generation, analytics, automation, conversion optimization, and digital growth strategy." />
-  <meta property="og:title" content="GrowthBridge Blog" />
-  <meta property="og:description" content="Practical insights on growth systems for startups, SaaS, e-commerce, and service businesses." />
-  <meta property="og:type" content="website" />
+  <title>Blog Post | GrowthBridge</title>
+  <meta name="description" content="GrowthBridge article" />
+  <meta property="og:title" content="GrowthBridge Article" />
+  <meta property="og:description" content="Practical digital growth insight from GrowthBridge." />
+  <meta property="og:type" content="article" />
   <meta name="twitter:card" content="summary" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -17,25 +17,20 @@
   <script defer src="assets/js/site.js"></script>
   <script defer src="assets/js/blog.js"></script>
 </head>
-<body data-page="blog">
+<body data-page="blog-post">
   <a class="skip-link" href="#main-content">Skip to content</a>
   <header class="site-header" data-include="header"></header>
   <main id="main-content">
     <section class="page-hero section slim-hero">
       <div class="container">
-        <p class="eyebrow">Blog</p>
-        <h1>Practical ideas for digital growth teams.</h1>
-        <p class="lead">This lightweight blog reads from a JSON content file so future posts can be added without rebuilding the front-end structure.</p>
+        <p class="eyebrow">Article</p>
+        <h1 id="post-title">Loading article...</h1>
+        <p class="lead" id="post-meta"></p>
       </div>
     </section>
-
     <section class="section">
-      <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow">Latest articles</p>
-          <h2>Insights on visibility, conversion, reporting, and scale.</h2>
-        </div>
-        <div id="blog-list" class="grid-3" aria-live="polite"></div>
+      <div class="container article-container">
+        <article id="post-content" class="card article-card"></article>
       </div>
     </section>
   </main>

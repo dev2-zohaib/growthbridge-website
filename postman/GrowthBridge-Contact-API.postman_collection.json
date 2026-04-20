@@ -1,0 +1,36 @@
+{
+  "info": {
+    "name": "GrowthBridge Contact API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Submit GrowthBridge Inquiry",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Alex Morgan\",\n  \"email\": \"alex@example.com\",\n  \"company\": \"North Peak SaaS\",\n  \"businessType\": \"SaaS\",\n  \"budget\": \"$5,000-$10,000\",\n  \"goal\": \"Generate more leads\",\n  \"message\": \"We want to improve landing page conversion and paid campaign efficiency.\",\n  \"consent\": \"on\",\n  \"submittedAt\": \"2026-04-20T19:14:05Z\"\n}"
+        },
+        "url": {
+          "raw": "{{contact_endpoint}}",
+          "host": [
+            "{{contact_endpoint}}"
+          ]
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "contact_endpoint",
+      "value": "https://postman-echo.com/post"
+    }
+  ]
+}

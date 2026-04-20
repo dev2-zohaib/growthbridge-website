@@ -1,97 +1,109 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact | GrowthBridge</title>
-    <meta name="description" content="Contact GrowthBridge to discuss analytics-driven marketing, automation, reporting, and technical consulting." />
-    <link rel="canonical" href="https://example.com/contact" />
-    <link rel="stylesheet" href="/styles.css" />
-  </head>
-  <body data-page="contact">
-    <header class="site-header">
-      <div class="container nav-shell">
-        <a class="brand" href="/index.html"><span class="brand-mark">GB</span><span>GrowthBridge</span></a>
-        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
-        <nav id="site-nav" class="site-nav" aria-label="Primary">
-          <a href="/index.html">Home</a>
-          <a href="/services.html">Services</a>
-          <a href="/case-studies.html">Case Studies</a>
-          <a href="/blog.html">Blog</a>
-          <a href="/contact.html" class="button button-sm">Contact</a>
-        </nav>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact GrowthBridge | Start the Conversation</title>
+  <meta name="description" content="Contact GrowthBridge to discuss marketing strategy, website improvements, automation, SEO, or analytics for your business." />
+  <meta property="og:title" content="Contact GrowthBridge" />
+  <meta property="og:description" content="Get in touch to discuss measurable marketing and technology improvements." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <script defer src="assets/js/config.js"></script>
+  <script defer src="assets/js/site.js"></script>
+  <script defer src="assets/js/contact.js"></script>
+</head>
+<body data-page="contact">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header" data-include="header"></header>
+  <main id="main-content">
+    <section class="page-hero section slim-hero">
+      <div class="container">
+        <p class="eyebrow">Contact</p>
+        <h1>Tell us what growth challenge you want to solve next.</h1>
+        <p class="lead">Use the form below to submit an inquiry. The endpoint is configurable in JavaScript so the form can be tested against a mock API in Postman or a future backend.</p>
       </div>
-    </header>
-    <main>
-      <section class="page-hero section">
-        <div class="container narrow">
-          <p class="eyebrow">Contact</p>
-          <h1>Let’s talk about your next stage of growth.</h1>
-          <p class="lead">Use the form below to share your goals. This frontend-only implementation includes client-side validation and submission states, and is ready to connect to a backend endpoint when available.</p>
-        </div>
-      </section>
-      <section class="section">
-        <div class="container contact-layout">
-          <div class="card contact-copy">
-            <h2>What to expect</h2>
-            <ul>
-              <li>Initial discovery around goals, channels, and reporting challenges</li>
-              <li>Discussion of lead generation, ROI, and digital infrastructure priorities</li>
-              <li>Recommendations for the highest-impact next steps</li>
-            </ul>
-            <p class="integration-note"><strong>Backend integration point:</strong> update <code>FORM_ENDPOINT</code> in <code>src/main.js</code> to wire the form to your API or service.</p>
-          </div>
-          <div class="card">
-            <form id="contact-form" novalidate>
-              <div class="form-grid">
-                <label>
-                  Full name
-                  <input type="text" name="name" required minlength="2" />
-                  <span class="field-error" data-error-for="name"></span>
-                </label>
-                <label>
-                  Work email
-                  <input type="email" name="email" required />
-                  <span class="field-error" data-error-for="email"></span>
-                </label>
-                <label>
-                  Company
-                  <input type="text" name="company" required minlength="2" />
-                  <span class="field-error" data-error-for="company"></span>
-                </label>
-                <label>
-                  Interested in
-                  <select name="service" required>
-                    <option value="">Select a service</option>
-                    <option>Performance Marketing</option>
-                    <option>Marketing Analytics & Reporting</option>
-                    <option>Content Marketing & Brand Positioning</option>
-                    <option>Marketing Automation & CRM Integrations</option>
-                    <option>Technical Consulting</option>
-                  </select>
-                  <span class="field-error" data-error-for="service"></span>
-                </label>
-              </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid-2 align-start">
+        <article class="card contact-card">
+          <h2>GrowthBridge inquiry form</h2>
+          <form id="contact-form" novalidate>
+            <div class="form-grid">
               <label>
-                Project goals
-                <textarea name="message" rows="6" required minlength="20"></textarea>
-                <span class="field-error" data-error-for="message"></span>
+                Full name
+                <input type="text" name="name" id="name" required minlength="2" maxlength="80" />
               </label>
-              <div class="form-actions">
-                <button class="button" type="submit">Send inquiry</button>
-                <p id="form-status" class="form-status" aria-live="polite"></p>
-              </div>
-            </form>
-          </div>
-        </div>
-      </section>
-    </main>
-    <footer class="site-footer">
-      <div class="container footer-grid">
-        <div><a class="brand brand-footer" href="/index.html"><span class="brand-mark">GB</span><span>GrowthBridge</span></a></div>
-        <div><h2>Pages</h2><ul><li><a href="/services.html">Services</a></li><li><a href="/case-studies.html">Case Studies</a></li><li><a href="/blog.html">Blog</a></li></ul></div>
+              <label>
+                Work email
+                <input type="email" name="email" id="email" required maxlength="120" />
+              </label>
+              <label>
+                Company
+                <input type="text" name="company" id="company" required minlength="2" maxlength="120" />
+              </label>
+              <label>
+                Business type
+                <select name="businessType" id="businessType" required>
+                  <option value="">Select one</option>
+                  <option>Startup</option>
+                  <option>E-commerce</option>
+                  <option>SaaS</option>
+                  <option>Regional service business</option>
+                  <option>Other</option>
+                </select>
+              </label>
+              <label>
+                Monthly budget range
+                <select name="budget" id="budget" required>
+                  <option value="">Select one</option>
+                  <option>Under $2,500</option>
+                  <option>$2,500-$5,000</option>
+                  <option>$5,000-$10,000</option>
+                  <option>$10,000+</option>
+                </select>
+              </label>
+              <label>
+                Primary goal
+                <select name="goal" id="goal" required>
+                  <option value="">Select one</option>
+                  <option>Generate more leads</option>
+                  <option>Improve website conversions</option>
+                  <option>Increase online sales</option>
+                  <option>Improve reporting and analytics</option>
+                  <option>Automate follow-up and operations</option>
+                </select>
+              </label>
+            </div>
+            <label>
+              Project details
+              <textarea name="message" id="message" rows="6" required minlength="20" maxlength="1200"></textarea>
+            </label>
+            <label class="checkbox-row">
+              <input type="checkbox" name="consent" id="consent" required />
+              <span>I agree to be contacted about my inquiry.</span>
+            </label>
+            <div id="form-status" class="form-status" role="status" aria-live="polite"></div>
+            <button class="btn btn-primary" type="submit">Send inquiry</button>
+          </form>
+        </article>
+        <aside class="card contact-aside">
+          <h2>Testing notes</h2>
+          <p>The form submits JSON to <code>window.GROWTHBRIDGE_CONFIG.contactEndpoint</code>. The default value points to a mock endpoint and can be changed in <code>assets/js/config.js</code>.</p>
+          <ul>
+            <li>Front-end validation runs before submission.</li>
+            <li>Failed requests display a clear fallback message.</li>
+            <li>A Postman collection is included in <code>postman/GrowthBridge-Contact-API.postman_collection.json</code>.</li>
+          </ul>
+        </aside>
       </div>
-    </footer>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+    </section>
+  </main>
+  <footer class="site-footer" data-include="footer"></footer>
+</body>
 </html>

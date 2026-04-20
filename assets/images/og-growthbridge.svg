@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="GrowthBridge Open Graph image">
+  <rect width="1200" height="630" fill="#081120"/>
+  <defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#47c2ff"/><stop offset="1" stop-color="#7cffc8"/></linearGradient></defs>
+  <rect x="70" y="70" width="1060" height="490" rx="28" fill="#0f1b31" stroke="url(#g)" stroke-width="3"/>
+  <text x="120" y="250" fill="#ffffff" font-family="Arial, sans-serif" font-size="74" font-weight="700">GrowthBridge</text>
+  <text x="120" y="330" fill="#a8b6d4" font-family="Arial, sans-serif" font-size="34">Marketing &amp; Technology Solutions</text>
+  <text x="120" y="410" fill="#7cffc8" font-family="Arial, sans-serif" font-size="28">Measurable digital growth for modern businesses</text>
+</svg>
