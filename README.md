@@ -1,139 +1,138 @@
 # GrowthBridge Website
 
-A responsive multi-page marketing website for **GrowthBridge Marketing & Technology Solutions** built with plain HTML, CSS, and JavaScript.
+A complete responsive marketing website for **GrowthBridge**, a digital-first marketing and technology services company focused on measurable ROI, integrated execution, and modern credibility.
 
-## Features
+## What is included
 
-- Multi-page responsive site: Home, About, Services, Case Studies, Blog, Contact
-- Reusable header/footer injected with JavaScript
-- JSON-driven blog listing and article rendering
-- Accessible markup with semantic HTML, labels, skip link, and clear navigation states
-- SEO basics: page titles, descriptions, Open Graph, Twitter metadata, and alt-friendly imagery
-- Configurable front-end contact form endpoint with validation and graceful error handling
-- Postman collection for testing the contact submission flow
-- Lightweight front-end unit tests for validation and blog rendering helpers
+- Responsive landing page with:
+  - Hero section and value proposition
+  - Services section covering performance marketing, analytics/reporting dashboards, content marketing/brand positioning, marketing automation/CRM integrations, and technical consulting
+  - About / why GrowthBridge section
+  - Process section
+  - Benefits section
+  - Calls to action
+  - Contact section with working client-side form UX
+- Accessible semantic HTML and polished modern styling
+- Mobile navigation behavior
+- Contact form validation, loading state, success/error handling, and configurable submission workflow
+- Lightweight automated tests using Node's built-in tooling
+- Social preview SVG asset
 
-## Project Structure
+## Project structure
 
 ```text
 .
-├── about.html
+├── README.md
+├── index.html
+├── package.json
 ├── assets
 │   ├── css
 │   │   └── styles.css
 │   ├── images
 │   │   └── og-growthbridge.svg
 │   └── js
-│       ├── blog.js
 │       ├── config.js
 │       ├── contact.js
-│       └── site.js
-├── blog-post.html
-├── blog.html
-├── case-studies.html
-├── contact.html
-├── data
-│   └── blog-posts.json
-├── index.html
-├── package.json
-├── postman
-│   ├── GrowthBridge-Contact-API.postman_collection.json
-│   └── API-Testing-Guide.md
-├── services.html
+│       └── main.js
 └── tests
-    ├── blog.test.js
     ├── contact.test.js
+    ├── main.test.js
     └── run-tests.js
 ```
 
-## Run Locally
+## Local setup
 
-Because the blog uses `fetch()` to load a JSON file, run the site from a local server rather than opening HTML files directly.
-
-### Option 1: Python
+### Option 1: simple static server
 
 ```bash
-python3 -m http.server 8080
+python3 -m http.server 4173
 ```
 
-Open: `http://localhost:8080`
+Then open `http://localhost:4173`.
 
-### Option 2: Node static server
+### Option 2: npm scripts
 
 ```bash
-npx serve .
+npm install
+npm test
+npm start
 ```
 
-## Contact Form Configuration
+> No runtime dependencies are required. `npm install` will simply create a lockfile if desired.
 
-Update the endpoint in `assets/js/config.js`:
+## Contact form workflow
+
+The site ships with a complete usable front-end submission workflow.
+
+### Default behavior
+
+The form uses a **mock submission handler** by default so it works in demos and local testing without a backend.
+
+Configuration lives in:
+
+- `assets/js/config.js`
+
+Default config:
 
 ```js
 window.GROWTHBRIDGE_CONFIG = {
-  contactEndpoint: 'https://postman-echo.com/post',
-  blogDataPath: 'data/blog-posts.json',
-  companyName: 'GrowthBridge Marketing & Technology Solutions'
+  submissionMode: 'mock',
+  submissionEndpoint: '',
+  requestTimeoutMs: 8000
 };
 ```
 
-### Expected Request Shape
+### Connect to a live endpoint
 
-The contact form sends a JSON `POST` body with:
+1. Replace the config with your real endpoint:
 
-- `name`
-- `email`
-- `company`
-- `businessType`
-- `budget`
-- `goal`
-- `message`
-- `consent`
-- `submittedAt`
+```js
+window.GROWTHBRIDGE_CONFIG = {
+  submissionMode: 'api',
+  submissionEndpoint: 'https://your-domain.com/api/contact',
+  requestTimeoutMs: 8000
+};
+```
 
-If the endpoint is unavailable, the UI shows a helpful fallback message explaining how to test with the included Postman collection.
+2. Ensure your endpoint accepts a JSON `POST` body with this shape:
 
-## Blog Content Management
+```json
+{
+  "name": "Jane Doe",
+  "email": "jane@example.com",
+  "company": "Acme",
+  "service": "Analytics & dashboards",
+  "message": "We need help improving attribution and reporting."
+}
+```
 
-Edit `data/blog-posts.json` to add or update posts.
+3. Return an HTTP `2xx` response for success. The front end will show a success state and reset the form.
+4. Return a non-`2xx` response to trigger the error state.
 
-Each post object includes:
+## Validation behavior
 
-- `slug`
-- `title`
-- `excerpt`
-- `date`
-- `readingTime`
-- `category`
-- `intro`
-- `sections[]`
+Client-side validation checks:
 
-The listing page (`blog.html`) and article template (`blog-post.html`) automatically render from this file.
+- name is required
+- email must be valid
+- company is required
+- service interest is required
+- message must be at least 20 characters
 
 ## Testing
 
-Run the lightweight test suite with:
+Run:
 
 ```bash
-node tests/run-tests.js
+npm test
 ```
 
-The tests cover:
+Tests cover:
 
-- Contact form validation rules
-- Basic rendering expectations for blog data
+- contact form validation logic
+- mock submission success path
+- presence of key content and responsive CSS markers
 
-## Postman Testing
+## Browser support notes
 
-See:
-
-- `postman/GrowthBridge-Contact-API.postman_collection.json`
-- `postman/API-Testing-Guide.md`
-
-## Future Integration Notes
-
-This project is intentionally front-end first and backend-ready. The contact form endpoint is configurable so the site can be connected to:
-
-- a CRM webhook
-- a custom API
-- a serverless function
-- a mock service for QA and demos
+The site uses standards-based HTML, CSS, and vanilla JavaScript designed to work across current Chrome, Edge, Firefox, and Safari versions. Layouts rely on broadly supported CSS Grid/Flexbox patterns and avoid framework-specific runtime dependencies.
